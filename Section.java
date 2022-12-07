@@ -1,9 +1,12 @@
 package SP;
 
+import SP.Element;
+import SP.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section implements Element {
     public String title;
     List<Element> elList = new ArrayList<Element>();
 
@@ -39,5 +42,14 @@ public class Section implements Element{
     @Override
     public int get(Element el) {
         return elList.indexOf(el);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
+
+        for (Element el : elList) {
+            el.accept(v);
+        }
     }
 }

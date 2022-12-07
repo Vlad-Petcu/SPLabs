@@ -1,5 +1,7 @@
 package SP;
 
+import SP.Element;
+import SP.Visitor;
 import java.util.concurrent.TimeUnit;
 
 public class Image implements Element {
@@ -29,6 +31,11 @@ public class Image implements Element {
 
     public void content(){
 
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
     }
 
     @Override

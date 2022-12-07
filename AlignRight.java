@@ -1,6 +1,9 @@
 package SP;
 
-public class AlignRight implements AlignStrategy{
+import SP.Paragraph;
+import SP.AlignmentStrategy;
+
+public class AlignRight implements AlignmentStrategy {
 
     @Override
     public void render(Paragraph p) {

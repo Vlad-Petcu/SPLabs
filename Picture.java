@@ -7,4 +7,3 @@ public interface Picture {
     public Dimension dim();
     public void content();
 }
-

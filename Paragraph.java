@@ -1,8 +1,11 @@
 package SP;
 
-public class Paragraph implements Element{
+import SP.AlignmentStrategy;
+import SP.Visitor;
+
+public class Paragraph implements Element {
     private String text;
-    private AlignStrategy alignStrategy;
+    private AlignmentStrategy alignStrategy;
 
     public Paragraph(String text) {
         this.text = text;
@@ -32,11 +35,16 @@ public class Paragraph implements Element{
     }
 
     @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
+    }
+
+    @Override
     public int get(Element el) {
         return 0;
     }
 
-    public void setAlignStrategy(AlignStrategy alignStrategy) {
+    public void setAlignStrategy(AlignmentStrategy alignStrategy) {
         alignStrategy.render(new Paragraph(text));
     }
 }

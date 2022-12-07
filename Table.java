@@ -1,6 +1,9 @@
 package SP;
 
-public class Table implements Element{
+import SP.Element;
+import SP.Visitor;
+
+public class Table implements Element {
     private String title;
 
     public Table(String title) {
@@ -34,5 +37,9 @@ public class Table implements Element{
         return 0;
     }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitTable(this);
+    }
 
 }

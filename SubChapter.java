@@ -1,7 +1,11 @@
 package SP;
 
+import SP.Element;
+import SP.Image;
+import SP.Paragraph;
+import SP.Table;
+
 import java.util.*;
-import java.util.Arrays;
 
 public class SubChapter {
     private String name;
